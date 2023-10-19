@@ -2491,7 +2491,7 @@ Use %3 and %4 to increase or decrease the font size.
 Type %5 for an overview of available commands.
 For more information on using this console, type %6.
 
-%7WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.%8</source>
+//%7WARNING: Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramifications of a command.%8</source>
         <extracomment>RPC console welcome message. Placeholders %7 and %8 are style tags for the warning content, and they are not space separated from the rest of the text intentionally.</extracomment>
         <translation type="unfinished">Welkom bij de %1 RPC console.
 Gebruik pijl omhoog en omlaag om geschiedenis te navigeren, en %2 om het scherm te legen.
@@ -2499,7 +2499,8 @@ Gebruik %3 en %4 om het lettertype te vergroten of verkleinen.
 Type %5 voor een overzicht van beschikbare commando's.
 Voor meer informatie over het gebruik van deze console, type %6.
 
-%7WAARSCHUWING: Er zijn oplichters actief, die gebruikers overhalen om hier commando's te typen, teneinde de inhoud van hun wallet te stelen. Gebruik de console niet, zonder de gevolgen van een commando volledig te begrijpen.%8</translation>
+//%7WAARSCHUWING: Er zijn oplichters actief, die gebruikers overhalen om hier commando's te typen, teneinde de inhoud van hun wallet te stelen. Gebruik de console niet, zonder de gevolgen van een commando volledig te begrijpen.%8
+</translation>
     </message>
     <message>
         <source>Executing…</source>
