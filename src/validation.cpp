@@ -3747,8 +3747,7 @@ bool ChainstateManager::AcceptBlockHeader(const CBlockHeader& block, BlockValida
     AssertLockHeld(cs_main);
 
     // Check for duplicate
-    uint256 header_hash = block.GetHash();
-    LogPrintf("Saw new header hash=%s\n", header_hash.ToString());
+    uint256 header_hash = block.GetHash();    
     BlockMap::iterator miSelf{m_blockman.m_block_index.find(header_hash)};
     if (header_hash != GetConsensus().hashGenesisBlock) {
         if (miSelf != m_blockman.m_block_index.end()) {
@@ -3829,9 +3828,11 @@ bool ChainstateManager::AcceptBlockHeader(const CBlockHeader& block, BlockValida
         return state.Invalid(BlockValidationResult::BLOCK_HEADER_LOW_WORK, "too-little-chainwork");
     }
     CBlockIndex* pindex{m_blockman.AddToBlockIndex(block, m_best_header)};
-
+    
     if (ppindex)
         *ppindex = pindex;
+
+    LogPrintf("Saw new header hash=%s\n", header_hash.ToString());
 
     return true;
 }
