@@ -9,7 +9,7 @@ class ExampleTest(BitcoinTestFramework):
         self.add_wallet_options(parser)
 
     def set_test_params(self):
-        self.setup_clean_chain = True
+        self.setup_clean_chain = False
         self.num_nodes = 3
         self.extra_args = [[], ["-logips"], []]
     
@@ -27,9 +27,11 @@ class ExampleTest(BitcoinTestFramework):
 
     def run_test(self):
         """Main test logic"""
-        
+              
         assert_equal (self.nodes[0].get_deterministic_priv_key().address, 'mjTkW3DjgyZck4KbiRusZsqTgaYTxdSz6z')
         assert_equal (self.nodes[0].get_deterministic_priv_key().key, 'cVpF924EspNh8KjYsfhgY96mmxvT6DgdWiTYMtMjuM74hJaU5psW')
+        assert_equal (self.nodes[0].getblockcount(), self.nodes[0].getblockchaininfo()["blocks"])
+        print(self.nodes[0].getblockchaininfo())
         
 if __name__ == '__main__':
     ExampleTest().main()
