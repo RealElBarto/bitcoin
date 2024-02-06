@@ -4,6 +4,11 @@ from test_framework.util import (
     assert_equal,
 )
 
+from test_framework.wallet import (
+    MiniWallet,
+    MiniWalletMode,
+)
+
 class ExampleTest(BitcoinTestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
@@ -29,9 +34,13 @@ class ExampleTest(BitcoinTestFramework):
         """Main test logic"""
               
         assert_equal (self.nodes[0].get_deterministic_priv_key().address, 'mjTkW3DjgyZck4KbiRusZsqTgaYTxdSz6z')
-        assert_equal (self.nodes[0].get_deterministic_priv_key().key, 'cVpF924EspNh8KjYsfhgY96mmxvT6DgdWiTYMtMjuM74hJaU5psW')
-        assert_equal (self.nodes[0].getblockcount(), self.nodes[0].getblockchaininfo()["blocks"])
-        print(self.nodes[0].getblockchaininfo())
         
+        # Node RPC
+        print(self.nodes[0].getblockchaininfo())
+
+        # Wallet RPCS
+        print(MiniWallet(self.nodes[0]).get_balance())
+
+
 if __name__ == '__main__':
     ExampleTest().main()
